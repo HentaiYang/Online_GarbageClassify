@@ -1,0 +1,33 @@
+<view class="Flex">
+  <view class="Full">
+    <view class="Card Award">
+      <view class="AwardContent">
+        <view class="avater">
+          <image src="{{userInfo.portrait}}"></image>
+        </view>
+        <view class="AwardItem">
+          <text>
+            您已达成
+          </text>
+          <text>
+            {{4}}
+          </text>
+          <text>
+            项成就
+          </text>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="Card Shadow Margin">
+      <van-grid square column-num="3" border="{{ false }}" gutter="{{ 10 }}">
+        <block wx:for="{{awardImage}}" wx:key="index">
+          <van-grid-item  use-slot>
+            <van-icon custom-class="{{index%2 == 0 ? 'grayscale': ''}}" name="{{item}}"  size="60px" />
+          </van-grid-item>
+        </block>
+      </van-grid>
+    </view>
+  </view>
+</view>

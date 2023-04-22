@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-transition": "@vant/weapp/transition/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

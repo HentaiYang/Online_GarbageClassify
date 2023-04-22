@@ -1,0 +1,6 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<van-tabbar active="{{ selected }}" active-color="#07c160" inactive-color="#000">
+  <van-tabbar-item wx:for="{{tabbarList}}" wx:key="index" data-name="{{item.text}}" data-path="{{item.url}}" data-index="{{index}}" icon="{{item.icon}}" bind:tap="switchTab">
+    {{item.text}}
+  </van-tabbar-item>
+</van-tabbar>

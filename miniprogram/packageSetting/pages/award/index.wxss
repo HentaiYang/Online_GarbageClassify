@@ -1,0 +1,27 @@
+/* packageSetting/pages/award/index.wxss */
+.Award{
+  background: linear-gradient(to bottom, #11998e, #38ef7d);
+}
+.avater,
+.avater image{
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  overflow: hidden;
+}
+.AwardContent{
+  display: flex;
+  align-items: flex-end;
+}
+.AwardItem{
+  display: flex;
+  align-items: flex-end;
+  font-size: var(--font-middle);
+}
+.AwardItem text:nth-child(2){
+  font-size: var(--font-ultra);
+  font-weight: 800;
+  color: #44633F;
+  padding: 0px 5px;
+  margin-bottom: -3px;
+}

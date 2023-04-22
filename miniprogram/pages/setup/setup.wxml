@@ -1,0 +1,56 @@
+<view class="Card PaddingReset">
+  <view class="Full">
+    <van-cell-group>
+      <van-cell title="区县" is-link value="{{location.community}}" bind:tap="choseCommunity" border="{{ false }}">
+      </van-cell>
+      <van-cell  title="姓名" is-link value="{{location.name}}" bind:tap="choseLocation"
+        label="上门回收时的地址" border="{{ false }}">
+      </van-cell>
+      <van-cell icon="phone-o" title="联系电话" is-link value="{{phone}}" label="回收时通过此电话联系您" border="{{ false }}"
+        bind:click="phoneShowPopup">
+      </van-cell>
+
+      <van-cell icon="manager-o" title="员工登录" label="员工登录入口" is-link bind:click="navgitorLogin" />
+
+    </van-cell-group>
+  </view>
+</view>
+<!-- picker -->
+<van-popup show="{{ pickerShow }}" round position="bottom" bind:close="pickerOnCancel">
+  <view class="section">
+    <view class="confirmTitle" bindtap="pickerOnCancel">
+      确认
+    </view>
+    <view class="selectedTitle">
+      当前选择：{{confirmCommunity}}
+    </view>
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange">
+
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" bindchange="bindChange">
+        <picker-view-column>
+          <view wx:for="{{firstList}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{secList}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{thridList}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </picker>
+  </view>
+</van-popup>
+
+
+<van-popup closeable round position="bottom" custom-style="height: 40%" show="{{ phoneShow }}"
+  bind:close="phoneOnClose">
+  <view class="Card">
+    <van-field label="手机号" value="{{ value }}" placeholder="请输入手机号" border="{{ false }}" bind:change="phoneonChange" />
+    <view class="MarginTop">
+      <van-button class="padding-right" icon="success" round type="primary" bind:click="confirm">确认</van-button>
+      <van-button icon="cross" round type="info" bind:click="cancel">取消</van-button>
+    </view>
+  </view>
+</van-popup>
+
+<!-- 引入地图选点插件 -->

@@ -1,0 +1,95 @@
+<view class="backgroundImage">
+</view>
+
+<view class="bottom">
+  <view style="width: 100%; max-width: 700px">
+    <view class="userCard">
+
+      <view class="cardContent">
+        <view class="cardItem">
+          <view class="avatar">
+            <image src="{{userinfo.portrait}}"></image>
+          </view>
+          <view class="information">
+            <view class="title">{{userinfo.userName}}</view>
+            <view class="informationItem">
+              <!-- <view class="content">{{userinfo.sex == 1? '男' : '女' }}</view> -->
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <view class="backgroundWhite"></view>
+      <view class="CardBackground">
+        <image mode="widthFix" src="../../image/flower.png">
+        </image>
+      </view>
+    </view>
+    <!-- 积分 -->
+    <view class="points">
+      <view class="pointsContent">
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="points" />
+            <text>我的积分</text>
+          </view>
+          <view class="pointsData">{{pointsData.points}}</view>
+        </view>
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="bar-chart-o" />
+            <text>剩余次数</text>
+          </view>
+          <view class="pointsData">{{pointsData.answerNumber}}</view>
+        </view>
+      </view>
+
+      <view class="pointsContent">
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="passed" />
+            <text>正确次数</text>
+          </view>
+          <view class="pointsData">{{pointsData.rightNumber}}</view>
+        </view>
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="close" />
+            <text>错误次数</text>
+          </view>
+          <view class="pointsData">{{pointsData.wrongNumber}}</view>
+        </view>
+      </view>
+
+      <view class="pointsContent">
+        <view class="pointsItem AlignItemStart">
+          <view class="pointsTitle">
+            <van-icon size="20" name="clock-o" />
+            <text>上次答题时间</text>
+          </view>
+          <view class="pointsData">{{date}}</view>
+        </view>
+
+
+      </view>
+
+
+      <view class="backgroundWhite"></view>
+      <view class="pointsBackground">
+        <image mode="widthFix" src="../../image/tree.png">
+        </image>
+      </view>
+
+    </view>
+
+
+
+    <button class="startAnswerButton" wx:if="{{pointsData.answerNumber !== 0}}" bindtap="start">开始答题</button>
+    <view class="startAnswerText" wx:if="{{pointsData.answerNumber == 0}}">
+      您今天已经答过题了,请明天再来！
+    </view>
+  </view>
+</view>
+
+<!-- <button bindtap="test">test</button> -->

@@ -1,0 +1,18 @@
+<view class="Flex">
+  <view class="Full">
+    <block wx:for="{{activeData}}" wx:key="index">
+      <view class="Card Active">
+        <image mode="aspectFill" src="{{item.image}}"></image>
+        <view class="activeTextContent">
+          <view class="activeTextContentTitle">
+            <view>{{item.title}}</view>
+            <view>{{item.date}}</view>
+          </view>
+          <view class="activeTextContentConfirm" style="color: {{item.confirm? '#2ed573': '#2f3542'}}">
+            {{item.confirm? '已完成': '未完成'}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

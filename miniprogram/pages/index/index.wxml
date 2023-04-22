@@ -1,0 +1,56 @@
+<!-- swiper -->
+<view>
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}">
+    <block wx:for="{{indexSwiper}}" wx:key="index">
+      <swiper-item class="swiper_item">
+        <view class="swiper_item_image">
+          <image mode="aspectFill" src="{{item.imageUrl}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- adSwiper -->
+<view class="adSwiperContent">
+  <swiper class="adSwiper" vertical="true" autoplay="true" circular="true" interval="3000">
+    <block wx:for="{{adSource}}" wx:key="index">
+      <navigator url="{{item.url}}">
+        <swiper-item>
+          <view class="adSwiperItem">
+            {{item.intro}}
+          </view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+
+</view>
+
+<!-- active information -->
+<view class="activeInformation">
+  <view class="activeInformationTitle">活动信息</view>
+  <scroll-view scroll-x class="stepsContent">
+    <view class="stepsItem" style="width: {{stepsWidth}}">
+      <van-steps steps="{{ steps }}" active="{{ stepsActive }}" />
+    </view>
+  </scroll-view>
+</view>
+
+<!-- poster pages -->
+<view class="activeInformation">
+  <view class="activeInformationTitle">活动</view>
+  <view>
+    <block wx:for="{{activePages}}" wx:key="index">
+      <!-- <navigator> -->
+        <view class="posterContent" data-url="{{item.path}}" bindtap="navigator">
+          <image class="posterImage" src="{{item.url}}" mode="aspectFit"></image>
+        </view>
+      <!-- </navigator> -->
+    </block>
+  </view>
+</view>
+
+<view class="heightMust Padding Margin">
+
+</view>

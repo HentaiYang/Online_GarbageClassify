@@ -1,0 +1,32 @@
+.Card {
+  background: linear-gradient(to bottom, #11998e, #38ef7d);}
+
+.rightBottomSide {
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  text-align: right;
+}
+
+.content {
+  padding: 20px 20px 25px;
+  display: flex;
+  color: #ffffff;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: var(--font-large);
+  margin-bottom: 5px;
+}
+
+.data {
+  font-size: var(--font-ultra);
+  font-weight: 800;
+}
+
+.gridTitleColor {
+  font-size: var(--font-small);
+  color: #1D976C;
+}

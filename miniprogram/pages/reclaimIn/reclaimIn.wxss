@@ -1,0 +1,11 @@
+/* pages/reclaimIn/reclaimIn.wxss */
+page{
+  width: 750rpx;
+}
+.bottomSelect{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}

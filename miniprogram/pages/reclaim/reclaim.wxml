@@ -1,0 +1,58 @@
+<!--pages/reclaim/reclaim.wxml-->
+
+
+
+<view class="time BoxSizing">
+  <text class="importInfo" decode>数据随时变化以实际为准\n</text>
+  <text>工作时间：9：00——20：00</text>
+  <view class="line"></view>
+</view>
+<view class="others">
+  <view class="group">
+    <view class="card one" bind:tap="navigate" data-group="kitchen">
+      <image class="images" mode="aspectFit" src="../../imgs/reclaim/kitchen.png" />
+      <view class="garbages">厨余垃圾</view>
+    </view>
+    <view class="card two" bind:tap="navigate" data-group="harmful">
+      <image class="images" mode="aspectFit" src="../../imgs/reclaim/harmful.png" />
+      <view class="garbages">有害垃圾</view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="card three" bind:tap="navigate" data-group="other">
+      <image class="images" mode="aspectFit" src="../../imgs/reclaim/other.png" />
+      <view class="garbages">其他垃圾</view>
+    </view>
+    <view class="card four" bind:tap="navigate" data-group="bulky">
+      <image class="images" mode="aspectFit" src="../../imgs/reclaim/bulky.png" />
+      <view class="garbages">大件垃圾</view>
+    </view>
+  </view>
+</view>
+<view class="main">
+  <view class="desc">
+    <view class="title">可回收垃圾</view>
+    <view class="info">个人回收计入数据库</view>
+  </view>
+  <view>
+    <view bind:tap="navigate" data-group="1" class="Flex BoxSizing select">
+      <view class="reclaimImgContent">
+        <image class="reclaimImg" mode="center" src="../../imgs/reclaim/welfare.png" />
+      </view>
+      <view class="reclaimText">公益捐赠</view>
+    </view>
+
+    <view bind:tap="navigate" data-group="2" class="Flex BoxSizing select">
+      <view class="reclaimImgContent">
+        <image class="reclaimImg" mode="center" src="../../imgs/reclaim/paid.png" />
+      </view>
+      <view class="reclaimText">有偿回收</view>
+    </view>
+
+  </view>
+</view>
+
+<view class="heightMust PaddingTop MarginTop">
+
+</view>

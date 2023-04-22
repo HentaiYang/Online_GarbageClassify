@@ -1,0 +1,36 @@
+<view class="Card">
+  <view class="content">
+    <view class="title">
+      您的积分
+    </view>
+    <view class="data">
+      {{1234}}
+    </view>
+  </view>
+  <view class="rightBottomSide">
+    <view>
+      明细
+    </view>
+    <view>
+      兑换规则
+    </view>
+  </view>
+</view>
+
+<!--  -->
+<!--  -->
+<van-cell-group title="积分兑换">
+  <van-grid direction="horizontal" column-num="2">
+    <block wx:for="{{shopData}}" wx:key="index">
+      <van-grid-item use-slot>
+      <van-icon size="50px"
+        name="{{item.icon}}" />
+      <view>
+        <view class="gridTitleColor">{{item.title}}</view>
+        <view>{{item.price}}</view>
+      </view>
+    </van-grid-item>
+    </block>
+    
+  </van-grid>
+</van-cell-group>

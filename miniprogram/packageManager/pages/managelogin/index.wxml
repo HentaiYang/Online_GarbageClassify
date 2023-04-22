@@ -1,0 +1,8 @@
+<view wx:if="{{!logined}}" class="unloginContent">
+  <view>
+    <view class="unloginUserAvatarUrl">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <button class="unloginButton" bindtap="onMyLogin">微信登录</button>
+  </view>
+</view>

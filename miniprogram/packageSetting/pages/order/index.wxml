@@ -1,0 +1,14 @@
+<!-- close.png -->
+<!-- matel.png -->
+<!-- paper.png -->
+<!-- plastics.png -->
+
+<van-collapse value="{{ activeNames }}" bind:change="onChange">
+  <van-collapse-item content-class="CollapseItem" title="2021年5月" name="1" label="125千克" value="87.5元" icon="bill">
+    <block wx:for="{{6}}" wx:key="index">
+      <van-cell title="玻璃 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+        <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/glass.png" class="custom-icon" />
+      </van-cell>
+    </block>
+  </van-collapse-item>
+</van-collapse>

@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/guide/guide",
+    "pages/setup/setup",
+    "pages/search/search",
+    "pages/mine/mine",
+    "pages/reclaim/reclaim",
+    "pages/reclaimForm/index",
+    "pages/reclaimIn/reclaimIn",
+    "pages/companyMsg/index",
+    "custom-tab-bar/index"
+  ],
+  "subpackages": [
+    {
+      "root": "packageSetting",
+      "name": "packageSetting",
+      "pages": [
+        "pages/shop/index",
+        "pages/active/index",
+        "pages/award/index",
+        "pages/order/index",
+        "pages/help/index",
+        "pages/ranking/index"
+      ]
+    },
+    {
+      "root": "packageManager",
+      "name": "packageManager",
+      "pages": [
+        "pages/managelogin/index",
+        "pages/managePanel/index",
+        "pages/indexSwiper/indexSwiper",
+        "pages/scrollMsg/scrollMsg",
+        "pages/activeInfo/activeInfo"
+      ]
+    },
+    {
+      "root": "packageAnswer",
+      "name": "packageAnswer",
+      "pages": [
+        "pages/testTitle/testTitle",
+        "pages/test/test"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#f0f",
+    "selectedColor": "#ccc",
+    "backgroundColor": "",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/guide/guide",
+        "text": "指南"
+      },
+      {
+        "pagePath": "pages/reclaim/reclaim",
+        "text": "回收"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "淄博市绿源垃圾分类",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 400
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.6",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  }
+}

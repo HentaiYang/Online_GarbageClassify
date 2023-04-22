@@ -1,0 +1,37 @@
+<!--packageManager/pages/indexSwiper/indexSwiper.wxml-->
+
+<!-- 文件上传 -->
+<view class="Card">
+  <view class="MarginBottom MarginTop">
+    <van-uploader multiple image-fit="aspectFill" file-list="{{ fileList }}" deletable="{{ true }}"
+      bind:delete="deleteImage" bind:after-read="afterRead" />
+  </view>
+
+  <van-button wx:if="{{uploading}}" loading loading-text="上传中" round type="info"></van-button>
+  <van-button wx:if="{{!uploading}}" round type="info"> 确定上传 </van-button>
+</view>
+
+<view>
+  <van-checkbox-group value="{{ checkboxResult }}" bind:change="checkboxOnChange">
+
+
+
+    <!-- 图片展示 -->
+    <van-grid column-num="3" border="{{ false }}">
+
+      <van-grid-item use-slot wx:for="{{ 8 }}" wx:key="index">
+        <view class="PreviewImageContent">
+          <view class="checkBoxContent">
+            <van-checkbox data-set="12344" name="{{index}}"></van-checkbox>
+          </view>
+          <image style="width: 100%; height: 90px;" src="https://img.yzcdn.cn/vant/apple-1.jpg" />
+        </view>
+      </van-grid-item>
+    </van-grid>
+
+
+
+
+  </van-checkbox-group>
+
+</view>

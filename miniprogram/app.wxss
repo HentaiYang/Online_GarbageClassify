@@ -1,0 +1,198 @@
+@import './miniprogram_npm/@vant/weapp/common/index.wxss';
+
+page {
+  --font-small: 14px;
+  --font-normal: 16px;
+  --font-middle: 18px;
+  --font-large: 20px;
+  --font-ultra: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}
+
+.Fontsmall {
+  font-size: var(--font-small);
+}
+
+.fontNormal {
+  font-size: var(--font-normal);
+}
+
+.Fontmiddle {
+  font-size: var(--font-middle);
+}
+
+.Fontlarge {
+  font-size: var(--font-large);
+}
+
+.Fontultra {
+  font-size: var(--font-ultra);
+}
+
+.fontWeightMiddle {
+  font-weight: 700;
+}
+
+.ColorGray {
+  color: #747d8c;
+}
+
+.Card {
+  position: relative;
+  max-width: 700px;
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.VantCellTitleClass {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.Width {
+  width: inherit;
+}
+
+.Shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.Flex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Flexdirection {
+  flex-direction: column;
+}
+
+.justifySpace {
+  justify-content: space-around;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.AlignItemCenter {
+  align-items: center;
+}
+
+.AlignItemStart {
+  align-items: flex-start !important;
+}
+
+
+.Full {
+  width: 100%;
+  max-width: 700px;
+}
+
+
+.positionAb {
+  position: absolute;
+}
+
+.bottomZero {
+  bottom: 0;
+}
+
+.Padding {
+  padding: 10px;
+}
+
+.PaddingTop {
+  padding-top: 20px;
+}
+
+.PaddingReset {
+  padding: 0;
+}
+
+.PaddingTopBottom {
+  padding: 10px 0px;
+}
+
+.PaddingLeftRight {
+  padding: 0px 10px;
+}
+
+.Margin {
+  margin: 10px;
+}
+
+.MarginReset {
+  margin: 0px !important;
+}
+
+.MarginTop {
+  margin-top: 20px;
+}
+.MarginBottom {
+  margin-bottom: 20px;
+}
+.MarginLeft {
+  margin-left: 10px;
+}
+
+.MarginRight {
+  margin-right: 10px;
+}
+
+.MarginLeftRight {
+  padding: 0px 10px;
+}
+
+.TextAlign {
+  text-align: center;
+}
+
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.BoxSizing {
+  box-sizing: border-box;
+}
+
+.custom-icon {
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.custom-value {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Hide {
+  display: none;
+}
+
+.heightMust {
+  height: 50px;
+}
+
+.Button {
+  width: 130px;
+  height: 41px;
+  border: 1px #fff solid;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 41px;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

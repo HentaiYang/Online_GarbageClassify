@@ -1,0 +1,52 @@
+<!--pages/test/test.wxml-->
+<page-meta>
+  <navigation-bar title="小测试" />
+</page-meta>
+
+
+
+
+<view wx:if="{{constentShow}}" class="progress">
+  <view style="width:{{progressWidth}};" wx:for="{{progress}}" wx:key="index" id="{{'progressItem' + (index + 1)}}"
+    class="progressItems {{item}}"></view>
+</view>
+<view class="testContianter">
+  <van-transition show="{{ constentShow }}" name="slide-right" duration="{{ { enter: 300, leave: 1000 } }}">
+    <view class="testContent">
+      <van-transition show="{{ titleShow }}" name="{{slide == 1 ? 'slide-right':'slide-left'}}">
+        <view class="questionIndex">
+          第{{testObject.index}}题
+        </view>
+        <view class="testTitle">
+          {{testObject.title}}
+        </view>
+      </van-transition>
+      <view class="line"></view>
+      <view class="options" style="pointer-events: {{unableTouch? 'none': 'auto'}};" wx:for="{{options}}" wx:key="index">
+        <view style="color: {{item.color}};" class="optionButton {{item.optionButtonJudge}} {{stopTab ? 'stopTab':''}}"
+          id="{{'button' + (index + 1)}}" data-class="{{item.class}}" bindtap="judgeTrue">{{item.title}}</view>
+      </view>
+    </view>
+  </van-transition>
+</view>
+
+<view class="result" wx:if="{{resultShow}}">
+  <van-transition name="slide-right" duration="{{ { enter: 300, leave: 1000 } }}">
+    <view class="userInfo">
+      <view class="portrait">
+        <image src="{{portrait}}"></image>
+      </view>
+      <view class="userName">{{userName}}</view>
+    </view>
+    <view class="resultContent">
+      <view class="rightNum">回答正确{{rightNum}}题</view>
+      <view class="points">获得<text class="pointSpan">{{points}}</text>积分</view>
+    </view>
+    <view class="Button" bindtap="goon">
+      继续答题
+    </view>
+  </van-transition>
+</view>
+<view class="testAuth" wx:if="{{testAuthShow}}">
+  <view class="authInfo">您今天已经答过题了,请明天再来！</view>
+</view>

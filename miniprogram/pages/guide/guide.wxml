@@ -1,0 +1,55 @@
+<!--pages/guide/guide.wxml-->
+<page-meta>
+  <navigation-bar title="分类指南" />
+</page-meta>
+<view class="topZIndex">
+  <van-sticky offset-top="-1" class="topSearch">
+    <van-search model:value="{{inputValue}}" use-action-slot bind:search="navigate" shape="round"
+      placeholder="搜索垃圾查看对应分类">
+      <view slot="action" bind:tap="navigate">搜索</view>
+    </van-search>
+  </van-sticky>
+  <van-notice-bar custom-class="notice" text="规范适用于山东省城乡生活垃圾的分类处置，包括分类投放、分类收集" />
+</view>
+<view class="lists">
+  <van-sticky class="sticky" offset-top="54">
+    <van-sidebar custom-class="sidebar" active-key="{{activeKey}}" bind:change="sidebarChange">
+      <van-sidebar-item custom-class="sidebaritem" style="--sidebar-selected-border-color:{{selectColor}};"
+        title="有害垃圾" />
+      <van-sidebar-item custom-class="sidebaritem" style="--sidebar-selected-border-color:{{selectColor}};"
+        title="可回收物" />
+      <van-sidebar-item custom-class="sidebaritem" style="--sidebar-selected-border-color:{{selectColor}};"
+        title="厨余垃圾" />
+      <van-sidebar-item custom-class="sidebaritem" style="--sidebar-selected-border-color:{{selectColor}};"
+        title="其他垃圾" />
+      <van-sidebar-item custom-class="sidebaritem" style="--sidebar-selected-border-color:{{selectColor}};"
+        title="专业垃圾" />
+    </van-sidebar>
+  </van-sticky>
+  <view class="rightList" style="width:{{listWidth}}">
+    <view class="garbagesList">
+      <view class="desCard" style="background:{{selectColor}}">
+        <view class="describe">
+          <view class="imageContent">
+            <image class="image" mode="aspectFit" src="{{imageURL}}"></image>
+          </view>
+          <view class="definition">
+            <!-- <text class="classTitle">{{classTitle}}</text> -->
+            <text class="classDefinition" decode>{{definition}}</text>
+          </view>
+        </view>
+        <view class="requires">
+          <ol wx:for="{{requires}}" wx:key="index">
+            <li><text decode>{{index + 1}}.{{item}}\n</text></li>
+          </ol>
+        </view>
+      </view>
+      <van-collapse class="garbageData" value="{{activeCollapse}}" bind:change="collapseChange">
+        <van-collapse-item wx:for="{{garbagesList}}" title="{{item.name}}" wx:key="index" name="{{index + 1}}">
+          <van-cell wx:for="{{item.value}}" title="{{item}}" wx:key="index"></van-cell>
+        </van-collapse-item>
+        <view class="HeightMust"></view>
+      </van-collapse>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+/* packageManager/pages/managelogin/index.wxss */
+.unloginContent{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.unloginUserAvatarUrl{
+  width: 162px;
+  height: 162px;
+  border-radius: 162px;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.unloginButton{
+  margin-top: 40px;
+  width: 150px;
+  height: 49px;
+  background-color: #62D9A3;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 49px;
+  border-radius: 18px;
+}

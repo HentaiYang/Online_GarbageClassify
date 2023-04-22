@@ -1,0 +1,24 @@
+<!--miniprogram/pages/companyMsg/index.wxml-->
+<view>
+<view class="title">周村</view>
+  <view class="areaGroup">
+    <view class="title">处理公司</view>
+    <view class="card" wx:for="{{companiesZhouCun}}" wx:key="index">
+      <view class="name">
+        <view class="companyName">{{item.companyName}}</view>
+        <view class="phone">{{item.phone}}</view>
+      </view>
+      <view class="line"></view>
+      <view class="toLocation">
+        <view class="toLocTitle">垃圾去向</view>
+        <view class="value">
+          <!-- <view class="first">一回收站</view> -->
+          <view class="second">{{item.toLocation}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <view class="title"></view>
+</view>

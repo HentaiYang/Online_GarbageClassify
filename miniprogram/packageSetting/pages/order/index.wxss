@@ -1,0 +1,12 @@
+/* packageSetting/pages/order/index.wxss */
+.CollapseItem{
+  padding: 0px 15px!important;
+}
+.cellValue{
+  font-size: var(--font-middle);
+  font-weight: 700;
+}
+.custom-icon{
+  margin-right: 10px;
+  margin-left: -10px;
+}

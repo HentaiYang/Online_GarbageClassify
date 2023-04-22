@@ -1,0 +1,145 @@
+<!--packageManager/pages/managePanel/index.wxml-->
+
+
+<view class="Flex justifySpace Padding BoxSizing">
+  <view class="Flex Flexdirection AlignItemCenter">
+    <van-circle value="{{ 12 }}" layer-color="#eeeeee" color="#84B371" clockwise="{{ false }}" text="12"
+      stroke-width="6" />
+    <view>
+      未处理
+    </view>
+  </view>
+  <view class="Flex Flexdirection AlignItemCenter">
+    <van-circle value="{{ 80 }}" layer-color="#eeeeee" color="#84B371" clockwise="{{ false }}" text="80"
+      stroke-width="6" />
+    <view>
+      处理中
+    </view>
+  </view>
+  <view class="Flex Flexdirection AlignItemCenter">
+    <van-circle value="{{ 8 }}" layer-color="#eeeeee" color="#84B371" clockwise="{{ false }}" text="8"
+      stroke-width="6" />
+    <view>
+      已完成
+    </view>
+  </view>
+</view>
+
+<van-collapse value="{{ activeNames }}" bind:change="collapseOnChange">
+
+
+  <!-- 订单管理 -->
+  <van-collapse-item title="订单管理" name="1">
+    <!-- close.png -->
+    <!-- matel.png -->
+    <!-- paper.png -->
+    <!-- plastics.png -->
+    <van-cell title="全部订单" border="{{ false }}" is-link />
+
+    <van-cell title="玻璃 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+      <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/glass.png"
+        class="custom-icon" />
+    </van-cell>
+    <van-cell title="织物 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+      <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/close.png"
+        class="custom-icon" />
+    </van-cell>
+    <van-cell title="金属 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+      <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/matel.png"
+        class="custom-icon" />
+    </van-cell>
+    <van-cell title="纸类 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+      <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/paper.png"
+        class="custom-icon" />
+    </van-cell>
+    <van-cell title="塑料 5千克" value="5 元" label="5月9日 10：50" border="{{ false }}" center value-class="cellValue">
+      <van-icon slot="icon" size="50px" name="https://deepdesigner.gitee.io/imagesrc/garbageImageSource/plastics.png"
+        class="custom-icon" />
+    </van-cell>
+
+
+  </van-collapse-item>
+
+  <van-collapse-item title="价格积分管理" name="2">
+    <van-tabs active="{{ active }}" color="#84B371" bind:change="tabsOnChange" animated>
+      <van-tab title="公益捐赠">
+        <block wx:for="{{reclaimFormPoints}}" wx:key="index">
+
+          <van-cell title="{{item.title}}" value="{{item.price}}分/千克" label="{{item.date}}" center
+            value-class="custom-value">
+            <van-icon slot="icon" size="50px" name="{{item.url}}" class="custom-icon" />
+            <van-icon slot="right-icon" size="20px" name="edit" bindtap="edit" />
+          </van-cell>
+          <van-cell title="{{item.title}}">
+            <van-stepper solt="right-icon" data-title="{{item.title}}" data-value="{{item.price}}"
+              data-info="{{item.info}}" value="{{ item.price }}" bind:change="stepperOnChange" />
+          </van-cell>
+        </block>
+
+        <view class="Margin">
+          <van-button icon="success" round color="#84B371" bindtap="welfareConfirm">确认</van-button>
+        </view>
+      </van-tab>
+      <van-tab title="有偿回收">
+
+      </van-tab>
+    </van-tabs>
+
+  </van-collapse-item>
+
+
+  <!-- 页面信息管理 -->
+  <van-collapse-item title="页面信息管理" name="3">
+    <!-- 轮播图 -->
+    <van-cell title="轮播图" label="共{{3}}张" border="{{ false }}" is-link bindtap="navgatorIndexSwiper" />
+    <van-grid column-num="3" border="{{ false }}">
+      <van-grid-item custom-class="PaddingReset" use-slot wx:for="{{ 3 }}" wx:for-item="index" wx:key="index">
+        <image mode="aspectFill" style="width: 100%; height: 90px;"
+          src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg" />
+      </van-grid-item>
+    </van-grid>
+    <!-- 滚动信息 -->
+    <van-cell title="滚动信息" label="共{{3}}条" border="{{ false }}" is-link />
+    <view class="van-multi-ellipsis--l2 Margin">
+      这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。
+    </view>
+    <view class="van-multi-ellipsis--l2 Margin">
+      这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。
+    </view>
+    <view class="van-multi-ellipsis--l2 Margin">
+      这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。这是一段最多显示两行的文字，后面的内容会省略。
+    </view>
+    <!-- 活动信息 -->
+    <van-cell title="活动信息" label="共{{3}}条" border="{{ false }}" is-link />
+    <scroll-view scroll-x class="stepsContent">
+      <view class="stepsItem" style="width: {{stepsWidth}}">
+        <van-steps steps="{{ steps }}" active="{{ stepsActive }}" />
+      </view>
+    </scroll-view>
+    <!-- 活动海报 -->
+    <van-cell title="活动海报" label="共{{2}}张" border="{{ false }}" is-link />
+    <van-grid column-num="3" border="{{ false }}">
+      <van-grid-item custom-class="PaddingReset" use-slot wx:for="{{ activePages }}" wx:key="index">
+        <image mode="aspectFill" style="width: 100%; height: 90px;" src="{{item.url}}" />
+      </van-grid-item>
+    </van-grid>
+
+
+  </van-collapse-item>
+
+
+  <!-- 成员管理（root） -->
+  <van-collapse-item wx:if="{{userDetial.auth == 'root'}}" title="成员管理" name="4">
+  </van-collapse-item>
+</van-collapse>
+
+<view class="heightMust"></view>
+
+<!-- <van-popup show="{{ welfareShow }}" round position="bottom" custom-style="height: 40%" bind:close="welfareOnClose"
+  closeable>
+  <view class="MarginTop Padding">
+    <van-cell title="data">
+      <van-stepper solt="right-icon" value="{{ 1 }}" bind:change="onChange" />
+    </van-cell>
+  </view>
+</van-popup> -->

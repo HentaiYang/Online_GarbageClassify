@@ -1,0 +1,65 @@
+
+.swiper {
+  height: 150px;
+}
+
+.swiper_item {
+  height: inherit;
+}
+
+.swiper_item_image {
+  width: 100%;
+  height: inherit;
+}
+
+.swiper_item_image image {
+  width: 100%;
+  height: inherit;
+}
+
+
+/* ad */
+.adSwiper {
+  padding: 10px;
+  height: 32px;
+  /* background-color: #66ccff; */
+
+}
+.adSwiperItem {
+  font-size: 12px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.adSwiperContent{
+  border: 1px #ccc solid;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+
+
+}
+.activeInformation{
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.activeInformationTitle{
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* poster */
+.posterContent{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 10px;
+}
+.posterImage{
+  width: 100%;
+  height: inherit;
+}

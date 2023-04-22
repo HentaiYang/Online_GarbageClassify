@@ -1,0 +1,191 @@
+<page-meta>
+  <navigation-bar title="{{reclaimFormTitle}}" />
+</page-meta>
+
+<van-notice-bar left-icon="volume-o" text="{{reclaimFormNotice}}" />
+
+
+<van-cell-group title="回收分类">
+  <van-radio-group direction="horizontal" value="{{ reclaimClass }}" bind:change="classOnChange">
+
+    <view class="Flex justifySpace PaddingTopBottom">
+      <block wx:for="{{reclaimFormIcon}}" wx:key="index">
+        <van-radio use-icon-slot value="{{ reclaimClass }}" name="{{item.name}}">
+          <view class="reclaimFormIconContent">
+            <image mode="aspectFill"
+              class="{{reclaimClass == item.name ? 'reclaimFormIconImage active':'reclaimFormIconImage'}}" slot="icon"
+              src="{{item.iconUrl}}" />
+          </view>
+          <view class="{{reclaimClass == item.name ? 'TextAlign textActive':'TextAlign'}}">{{item.intro}}</view>
+        </van-radio>
+      </block>
+    </view>
+
+  </van-radio-group>
+</van-cell-group>
+
+<!--积分兑换准则-->
+<van-cell-group title="{{reclaimFormPriceAndPoints}}">
+  <!-- 变成字符串了 -->
+  <van-cell title-class="Fontmiddle" title="{{reclaimFormPrice[reclaimClass-1].title}}" center
+    value="{{pageClass == 1 ? reclaimFormPrice[reclaimClass-1].price + '分/千克': reclaimFormPrice[reclaimClass-1].price + ''}}">
+  </van-cell>
+</van-cell-group>
+<!-- <van-cell-group title="{{reclaimFormPriceAndPoints}}">
+  <block wx:for="{{reclaimFormIcon}}" wx:key="index">
+    <van-cell title-class="Fontmiddle" title="{{item.intro}}" center
+      value="{{pageClass == 1 ? reclaimFormPrice[index].price + '分/千克': reclaimFormPrice[index].price + '元/千克'}}">
+      <van-icon custom-class="MarginRight" slot="icon" size="50px" name="{{item.iconUrl}}" />
+    </van-cell>
+  </block>
+</van-cell-group> -->
+
+
+
+
+<van-cell-group title="预估重量">
+
+  <van-radio-group direction="horizontal" value="{{ reclaimWeight }}" bind:change="weightOnChange">
+
+
+    <view class="Flex justifySpace PaddingTopBottom">
+      <block wx:for="{{weight}}" wx:key="index">
+        <van-radio use-icon-slot value="{{ reclaimWeight }}" name="{{item.name}}">
+          <view
+            class="{{reclaimWeight == item.name ? 'reclaimFormWeightContent WeightActive WeightTextActive':'reclaimFormWeightContent'}}">
+            {{item.info}}
+          </view>
+        </van-radio>
+      </block>
+    </view>
+  </van-radio-group>
+
+</van-cell-group>
+
+<van-cell-group title="注意事项">
+  <block wx:for="{{warning}}" wx:key="index">
+    <view class="Card PaddingLeftRight Fontsmall">{{item}}</view>
+  </block>
+</van-cell-group>
+
+<view class="Card Margin">
+  <view class="Full">
+    <van-cell title="预约时间" is-link value="{{timeValue ? timeValue :'请选择预约时间'}}"
+      title-class="Fontmiddle fontWeightMiddle" arrow-direction="down" bind:click="timeShowPopup" />
+  </view>
+</view>
+<view class="Card MarginLeftRight">
+  <view class="Full">
+    <van-cell title="预约地址" is-link value="{{locationValue ? locationValue.name :'请选择预约地址'}}"
+      title-class="Fontmiddle fontWeightMiddle" arrow-direction="down" bind:tap="choseLocation" />
+  </view>
+</view>
+
+<view class="Card MarginLeftRight">
+  <view class="Full">
+    <van-cell title="手机号" is-link value="{{phoneValue ? phoneValue :'请输入手机号'}}"
+      title-class="Fontmiddle fontWeightMiddle" arrow-direction="down" bind:tap="chosePhone" />
+  </view>
+</view>
+
+<view class="Card Margin">
+  <view class="Full Flex justifyBetween">
+    <view>
+      <view style="width: 120px; height:27px;line-height:27px" class="Flex justifyBetween fontNormal fontWeightMiddle">
+        {{pageClass == 1 ?'预估积分':'预估价格'}}
+        <view class="Fontlarge">
+          {{pageClass == 1 ? 12 + '分': 12 + '元'}}
+        </view>
+      </view>
+      <view class="Fontsmall">
+        成交价格以实际评估为准
+      </view>
+    </view>
+    <view class="orderButton" bindtap="submitForm">
+      立即下单
+    </view>
+  </view>
+</view>
+
+<van-cell-group title="回收要求">
+  <view class="Card" style="padding-left: 0px;padding-right:0px;">
+    <view class="Full Flex justifySpace">
+      <block wx:for="{{request}}" wx:key="index">
+        <view class="Flex Flexdirection AlignItemCenter">
+          <view class="reclaimFormRequestContent">
+            <image class="reclaimFormRequestImage" mode="aspectFill" src="{{item.icon}}"></image>
+          </view>
+          <view class="TextAlign Padding">
+            {{item.intro}}
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+</van-cell-group>
+
+<!-- time -->
+<van-popup show="{{ timeShow }}" round position="bottom" bind:close="timeOnClose">
+  <view class="popupContainer">
+    <view class="popupContainerBody">
+      <view class="confirmTitle" bindtap="timeOnClose">
+        确认
+      </view>
+      <view class="selectedDate">{{year}}年{{Month}}月{{Day}}日{{hour}}点</view>
+      <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}"
+        bindchange="bindChange">
+        <picker-view-column>
+          <view style="line-height: 50px; text-align: center;">{{year}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{month}}" wx:key="index" style="line-height: 50px; text-align: center;">{{item}}月</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{day}}" wx:key="day" style="line-height: 50px; text-align: center;">{{item}}日</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{hours}}" wx:key="hour" style="line-height: 50px; text-align: center;">{{item}}点</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</van-popup>
+<!-- location -->
+<van-popup show="{{ locationShow }}" round closeable position="bottom" custom-style="height: 40%"
+  bind:close="loactionOnClose">
+
+</van-popup>
+
+<!--订单确认-->
+<van-popup show="{{ formConfirmShow }}" round closeable custom-class="formConfirmShow" bind:close="formConfirmShow">
+  <view class="Fontlarge fontWeightMiddle Padding">订单确认</view>
+
+  <view class="Padding Fontmiddle">
+    <view>回收类别: {{pageClass == 1 ? "公益回收" : "有偿回收"}}</view>
+    <view>垃圾类别:{{reclaimFormIcon[reclaimClass - 1].intro}}</view>
+    <view>预估重量: {{weight[reclaimWeight - 1].info}}</view>
+    <view>预约时间: {{timeValue}}</view>
+    <view>预约地点: {{locationValue.name}}</view>
+    <view>手机号: {{phoneValue}}</view>
+    <view class="fontNormal ColorGray">注意:订单提交成功后将无法更改，稍后工作人员将和您取得联系核实订单信息</view>
+  </view>
+
+  <view class="Padding positionAb bottomZero BoxSizing formConfirmButton">
+    <van-button icon="success" round type="primary" bind:click="confirmSubmit">确认提交</van-button>
+    <van-button icon="cross" round type="info" bind:click="formConfirmShow">取消</van-button>
+  </view>
+
+</van-popup>
+
+<!-- 手机号 -->
+<van-popup closeable round position="bottom" custom-style="height: 40%" show="{{ chosePhoneShow }}"
+  bind:close="chosePhoneClose">
+  <view class="Card">
+    <van-field label="手机号" value="{{ value }}" placeholder="请输入手机号" border="{{ false }}" bind:change="phoneonChange" />
+    <view class="MarginTop BoxSizing PaddingLeftRight Flex justifyBetween">
+      <van-button class="padding-right" icon="success" round type="primary" bind:click="confirm">确认</van-button>
+      <van-button icon="cross" round type="info" bind:click="cancel">取消</van-button>
+    </view>
+  </view>
+</van-popup>

@@ -1,0 +1,127 @@
+{
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "回收主页",
+          "pathName": "pages/reclaim/reclaim",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测试",
+          "pathName": "packageAnswer/pages/test/test",
+          "query": "openid=oidXc5YKHec9xm0QXvxBzuLfQtek",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "积分商城",
+          "pathName": "packageSetting/pages/shop/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "参与活动",
+          "pathName": "packageSetting/pages/active/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "成就",
+          "pathName": "packageSetting/pages/award/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/setup/setup",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "控制面板—订单",
+          "pathName": "packageSetting/pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "帮助与反馈",
+          "pathName": "packageSetting/pages/help/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "回收表单",
+          "pathName": "pages/reclaimForm/index",
+          "query": "class=1",
+          "scene": null
+        },
+        {
+          "name": "指南",
+          "pathName": "pages/guide/guide",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "公司主页",
+          "pathName": "pages/companyMsg/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理登录",
+          "pathName": "packageManager/pages/managelogin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "控制面板",
+          "pathName": "packageManager/pages/managePanel/index",
+          "query": "openid=oidXc5YKHec9xm0QXvxBzuLfQtek&auth=root&userName=博识晴天",
+          "scene": null
+        },
+        {
+          "name": "排名",
+          "pathName": "packageSetting/pages/ranking/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "订单内容",
+          "pathName": "pages/reclaimIn/reclaimIn",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测试开始页",
+          "pathName": "packageAnswer/pages/testTitle/testTitle",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "控制面板—主页轮播",
+          "pathName": "packageManager/pages/indexSwiper/indexSwiper",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "garbageClassify_online-main"
+}

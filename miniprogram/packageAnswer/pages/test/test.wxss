@@ -1,0 +1,219 @@
+/* pages/test/test.wxss */
+page {
+  width: 750rpx;
+  height: 95%;
+}
+.progress{
+  position: absolute;
+  display: flex;
+  top: 10px;
+  width: 100%;
+  height: 5px;
+}
+.progressItems{
+  border-radius: 1px;
+}
+.progressRight{
+  height: 100%;
+  background:#88DBA3;
+}
+.progressError{
+  height: 100%;
+  background: #C94B4F;
+}
+.testContianter {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testContent {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+
+.questionIndex {
+  font-size: 15px;
+  opacity: 0.5;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  text-align: center;
+}
+
+.testTitle {
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: #707070;
+  opacity: 0.4;
+  position: absolute;
+  top: 150px;
+}
+
+.options {
+  position: relative;
+  top: 200px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.optionButton {
+  padding: 16px 25px;
+  margin-top: 20px;
+  border: 1px solid #707070;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #57606f;
+  text-align: center;
+}
+.optionButtonError{
+  color: #FFFFFF;
+  border: 2px solid #C94B4F;
+}
+.optionButtonError::before{
+  content: '\2716';
+  color: #C94B4F;
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  right: 255px;
+  bottom: 22px;
+  left: 20px;
+  padding: 5px;
+  z-index: -1;
+  border-radius: 2px;
+  transform: scale(1.4);
+}
+.optionButtonError::after{
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  bottom: 7px;
+  left: 70px;
+  z-index: -1;
+  background: #C94B4F;
+  padding: 10px;
+  transform: perspective(17px) rotateX(1deg);
+  border-bottom: none;
+  transform-origin: right;
+}
+.optionButtonRight{
+  color: #FFFFFF;
+  border: 2px solid #5A9367;
+}
+.optionButtonRight::before{
+  content: '\2714';
+  color: #5A9367;
+  position: absolute;
+  display: inline-block;
+  top: 10px;
+  right: 255px;
+  bottom: 22px;
+  left: 20px;
+  padding: 5px;
+  z-index: -1;
+  border-radius: 2px;
+  transform: scale(1.4);
+}
+.optionButtonRight::after{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 5px;
+  right: 7px;
+  bottom: 7px;
+  left: 70px;
+  z-index: -1;
+  background: #5A9367;
+  padding: 10px;
+  transform: perspective(17px) rotateX(1deg);
+  border-bottom: none;
+  transform-origin: right;
+}
+
+.optionButtonActive {
+  color: #000000;
+}
+
+.stopTab {
+  pointer-events: none;
+}
+
+.result {
+  width: 660rpx;
+  height: 90%;
+  position: relative;
+  top: 5%;
+  margin: 0 auto;
+  background: #88DBA3;
+}
+
+.userInfo {
+  width: 80px;
+  margin: 0 auto;
+  padding-top: 50px; 
+}
+
+.portrait {
+  width: 74px;
+  height: 74px;
+  border-radius: 74px;
+  overflow: hidden;
+  border: 4px solid #5A9367;
+  border-radius: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portrait image {
+  width: 74px;
+  height: 74px;
+}
+
+.userName {
+  margin-top: 10px;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: center;
+}
+.resultContent{
+  width: 100%;
+  text-align: center;
+  color: #FFFFFF;
+}
+.rightNum{
+  margin-top: 16px;
+  font-size: 25px;
+  font-weight: 500;
+}
+.points{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 30px;
+}
+.pointSpan{
+  transform: translateY(-25%);
+  margin: 0 5px;
+  font-size: 66px;
+}
+.testAuthShow{
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+.authInfo{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}

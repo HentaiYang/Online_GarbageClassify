@@ -1,0 +1,23 @@
+<view class="Card">
+  <view class="Full">
+    <van-search value="{{ value }}" input-align="center" placeholder="请输入搜索关键词" />
+  </view>
+</view>
+<view>
+  <van-cell-group title="问题分类">
+    <view class="Card">
+      <view class="Full">
+        <van-skeleton title row="4" />
+        <view class="Margin"></view>
+        <van-skeleton title row="4" />
+      </view>
+    </view>
+  </van-cell-group>
+</view>
+
+<view class="Card">
+  <view class="Full Flex justifySpace">
+    <van-button round icon="records" type="primary">我要反馈</van-button>
+    <van-button round icon="underway-o" plain type="primary">历史反馈</van-button>
+  </view>
+</view>

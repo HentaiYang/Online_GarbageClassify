@@ -1,0 +1,79 @@
+/* pages/guide/guide.wxss */
+page{
+  width: 750rpx;
+  height: 100%;
+}
+.topZIndex{
+  z-index: 200;
+  position: relative;
+}
+.topSearch{
+  margin-top: -1px;
+}
+.lists{
+  width: 750rpx;
+  height: 100%;
+  position: relative;
+}
+.sticky{
+  width: 105px;
+  position: absolute;
+}
+.sidebaritem{
+  width: 105px;
+}
+.rightList{
+  width:500rpx;
+  position: absolute;
+  right: 0;
+  padding-bottom: 50px;
+  z-index: 99;
+}
+.desCard{
+  opacity: 0.85;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+}
+.describe{
+  display: flex;
+}
+
+.image{
+  height: 120px;
+}
+
+.imageContent{
+  height: 113px;
+  width: 84.4px;
+}
+.image{
+  height: 113px;
+  width: 84.4px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.classTitle{
+  font-size: 14px;
+  font-weight: 700;
+}
+h3{
+  color:#FBFAFA;
+}
+
+.classDefinition{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.definition{
+  margin-left: 10px;
+  color: #FBFAFA;
+  font-size: 15px;
+}
+.requires{
+  color: #FBFAFA;
+  font-size: 13px;
+  padding-top:10px;
+}

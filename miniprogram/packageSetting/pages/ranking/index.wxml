@@ -1,0 +1,3 @@
+<!--packageSetting/pages/ranking/index.wxml-->
+<map name="ranking" class="showPoints" markers="{{markers}}" latitude="{{location.latitude}}" longitude="{{location.longitude}}" scale="{{scale}}"></map>
+

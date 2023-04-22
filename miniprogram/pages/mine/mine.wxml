@@ -1,0 +1,76 @@
+<view class="backgroundImage">
+</view>
+
+<view class="bottom" wx:if="{{userShow}}">
+  <view style="width: 100%; max-width: 700px">
+    <view class="userCard">
+
+      <view class="cardContent">
+        <view class="cardItem">
+          <view class="avatar">
+            <image src="{{portrait}}"></image>
+          </view>
+          <view class="information">
+            <view class="title">{{userName}}</view>
+            <view class="informationItem">
+              <view class="content">{{sex == 1? '男' : '女' }}</view>
+              <view class="content">{{location}}</view>
+            </view>
+            <view class="volunteer" bindtap="BeAvolunteer">
+              成为志愿者
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="backgroundWhite"></view>
+      <view class="CardBackground">
+        <image mode="widthFix" src="../../imgs/flower.png">
+        </image>
+      </view>
+    </view>
+    <!-- 积分 -->
+    <view class="points">
+      <view class="pointsContent">
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="points" />
+            <text>我的积分</text>
+          </view>
+          <view class="pointsData">{{score}}</view>
+        </view>
+        <view class="pointsItem">
+          <view class="pointsTitle">
+            <van-icon size="20" name="bar-chart-o" />
+            <text>我的排名</text>
+          </view>
+          <view class="pointsData">{{rank}}</view>
+        </view>
+      </view>
+      <view class="backgroundWhite"></view>
+      <text class="Fontsmall Padding">每日凌晨12点更新</text>
+      <view class="pointsBackground">
+        <image mode="widthFix" src="../../imgs/tree.png">
+        </image>
+      </view>
+    </view>
+
+    <!-- 设置 -->
+    <view class="Card shadow">
+      <block wx:for="{{setting}}" wx:key='index'>
+        <van-cell icon="{{item.icon}}" title="{{item.title}}" url="{{item.url}}" is-link custom-class="VantCellClass"
+          title-class="VantCellTitleClass" border="{{ false }}" />
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="unlogin" wx:if="{{!userShow}}">
+  <view class="Avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="nikename">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <view class="loginButton" bindtap="login">微信登录</view>
+</view>

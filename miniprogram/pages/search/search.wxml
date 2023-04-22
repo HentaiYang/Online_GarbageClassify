@@ -1,0 +1,21 @@
+<!--pages/search/search.wxml-->
+<page-meta>
+  <navigation-bar title="搜索" />
+</page-meta>
+
+<van-search shape="round" use-action-slot placeholder="搜索垃圾查看对应分类" bind:change="getInputValue"
+  model:value="{{inputValue}}">
+  <view slot="action" bind:tap="searchCancel">取消</view>
+</van-search>
+
+<view class="showList">
+  <van-cell class="garbageData" wx:for="{{showList}}" wx:key="index" title="{{item.name}}">
+    {{classList[item.class - 1]}}</van-cell>
+</view>
+
+<view wx:if="{{showEmpty}}">
+  <van-empty description="没有你要找的结果">
+    <van-button round type="info" class="bottom-button" disabled="{{!btnAbled}}" bind:click="subValue">{{btnValue}}
+    </van-button>
+  </van-empty>
+</view>

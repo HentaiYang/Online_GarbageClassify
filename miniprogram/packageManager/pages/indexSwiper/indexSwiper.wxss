@@ -1,0 +1,10 @@
+/* packageManager/pages/indexSwiper/indexSwiper.wxss */
+.PreviewImageContent{
+  position: relative;
+  width: 100%;
+}
+.checkBoxContent{
+  position: absolute;
+  right: 0;
+  top: -14px;
+}

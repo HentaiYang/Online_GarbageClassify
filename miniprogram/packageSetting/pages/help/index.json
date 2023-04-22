@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "帮助与反馈",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

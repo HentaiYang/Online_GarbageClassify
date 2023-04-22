@@ -1,0 +1,17 @@
+/* pages/setup/setup.wxss */
+.padding-right{
+  margin-right: 20px;
+}
+.selectedTitle{
+  text-align: center;
+  font-size: var(--font-middle);
+  font-weight: 700;
+  margin-top: 10px;
+}
+.confirmTitle{
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-size: var(--font-normal);
+}

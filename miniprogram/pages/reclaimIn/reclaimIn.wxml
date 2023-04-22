@@ -1,0 +1,37 @@
+<!--pages/reclaimIn/reclaimIn.wxml-->
+<view wx:if="{{pageShow}}">
+  <!-- <view class="formPage">
+    <view wx:for="{{recycleOrders}}" wx:key="index">
+      <view>回收类别: {{item.pageClass == 1 ? "公益回收" : "有偿回收"}}</view>
+      <view>物品类别: {{item.classification}}</view>
+      <view>预估重量: {{item.weight}}</view>
+      <view>预约时间: {{item.appoinTime}}</view>
+      <view>预约地点: {{item.location}}</view>
+      <view>联系方式: {{item.phone}}</view>
+      <view>状态: {{item.status}}</view>
+    </view>
+  </view> -->
+
+  <view wx:for="{{recycleOrders}}" wx:key="index">
+    <van-card title="{{item.pageClass}}--{{item.classification}}" tag="{{item.status}}"
+      price="{{item.money}}" thumb="{{item.iconUrl}}" desc="订单时间:{{item.dateTime}}">
+      <view slot="price-top">
+        预估重量:{{item.weight}}
+        <text>\n</text>
+        预约时间:{{item.appoinTime}}
+        <text>\n</text>
+        预约地点:{{item.location}}
+        <text>\n</text>
+        联系方式:{{item.phone}}
+        <text>\n</text>
+        实际重量:{{item.actualWeight}}
+      </view>
+    </van-card>
+  </view>
+
+  <!--继续回收或者返回主页-->
+  <view class="bottomSelect">
+    <van-button icon="success" round type="primary" bind:click="newForm">新建订单</van-button>
+    <van-button icon="success" round type="primary" bind:click="home">返回主页</van-button>
+  </view>
+</view>
